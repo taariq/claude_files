@@ -111,6 +111,7 @@ When asked to do something, just do it - including obvious follow-up actions nee
 - When starting work without a clear branch for the current task, YOU MUST create a WIP branch.
 - YOU MUST TRACK All non-trivial changes in git.
 - YOU MUST commit frequently throughout the development process, even if your high-level tasks are not yet done. Commit your journal entries.
+- YOU MUST always add a reference link to your commits in the issue related to that commit for us to track issues and their referenced commits. 
 - NEVER SKIP, EVADE OR DISABLE A PRE-COMMIT HOOK
 - NEVER use `git add -A` unless you've just done a `git status` - Don't add random test files to the repo.
 
@@ -168,4 +169,23 @@ YOU MUST follow this debugging framework for ANY technical issue:
 - Document architectural decisions and their outcomes for future reference
 - Track patterns in user feedback to improve collaboration over time
 - When you notice something that should be fixed but is unrelated to your current task, document it in your journal rather than fixing it immediately
+
+## Security
+
+### Secrets and Sensitive Data
+- YOU MUST NEVER commit secrets, API keys, passwords, tokens, or credentials to version control
+- Before ANY commit, YOU MUST scan staged files for potential secrets (look for patterns like API keys, tokens, passwords)
+- YOU MUST STOP and ask before committing .env files, credential files, or config files containing sensitive data
+- YOU MUST use environment variables or secure vaults for all secrets
+- If you discover committed secrets, YOU MUST STOP IMMEDIATELY and alert Taariq
+
+### Code Security
+- YOU MUST validate and sanitize all external inputs
+- YOU MUST use parameterized queries for database operations (never string concatenation)
+- YOU MUST avoid eval() or similar dynamic code execution with user input
+- YOU MUST implement proper error handling that doesn't leak sensitive information
+
+### Public Repository Awareness
+- Before pushing to any remote, YOU MUST verify it's not accidentally pushing to a public repo when the code contains sensitive business logic or data
+- YOU MUST alert Taariq if you detect configuration that might expose sensitive services publicly
 
