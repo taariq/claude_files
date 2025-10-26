@@ -138,7 +138,39 @@ YOU MUST NEVER fix a symptom or add a workaround instead of finding a root cause
 
 YOU MUST follow this debugging framework for ANY technical issue:
 
-### Phase 1: Root Cause Investigation (BEFORE attempting fixes)
+### Phase 0: MANDATORY Pre-Fix Checklist (MUST COMPLETE BEFORE ANY FIX)
+
+Before proposing ANY fix, YOU MUST gather this information and show it to Taariq:
+
+1. **Get Exact Error Details**
+   - [ ] What is the EXACT error message or symptom?
+   - [ ] What is the EXACT URL/request that's failing? (from browser DevTools Network tab or logs)
+   - [ ] What is the EXACT response code and response body?
+
+2. **Test Each Layer**
+   - [ ] Does the underlying service/API work directly? (test with curl/direct access)
+   - [ ] Does it work through each intermediate layer? (proxies, CDNs, framework wrappers)
+   - [ ] Which specific layer is failing?
+
+3. **Check Configuration**
+   - [ ] Are all required configurations in place? (check config files)
+   - [ ] Are environment variables set correctly?
+   - [ ] Are external services/domains whitelisted/configured?
+
+4. **Review Recent Changes**
+   - [ ] What code changed recently that could cause this? (git log, git diff)
+   - [ ] Was this ever working? If yes, when did it break?
+
+5. **State Your Hypothesis**
+   - [ ] What do you believe is the ROOT CAUSE (not symptom)?
+   - [ ] What evidence supports this hypothesis?
+   - [ ] How will you verify this hypothesis before fixing?
+
+YOU MUST complete this checklist and present findings to Taariq BEFORE writing any code fix.
+If you cannot complete the checklist, STOP and ask Taariq for help gathering information.
+
+### Phase 1: Root Cause Investigation (AFTER completing Phase 0)
+
 - **Read Error Messages Carefully**: Don't skip past errors or warnings - they often contain the exact solution
 - **Reproduce Consistently**: Ensure you can reliably reproduce the issue before investigating
 - **Check Recent Changes**: What changed that could have caused this? Git diff, recent commits, etc.
