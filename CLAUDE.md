@@ -114,6 +114,11 @@ When asked to do something, just do it - including obvious follow-up actions nee
 - YOU MUST always add a reference link to your commits in the issue related to that commit for us to track issues and their referenced commits. 
 - NEVER SKIP, EVADE OR DISABLE A PRE-COMMIT HOOK
 - NEVER use `git add -A` unless you've just done a `git status` - Don't add random test files to the repo.
+- YOU MUST remove ALL references to Claude from commit messages before pushing to GitHub. This includes:
+  - "🤖 Generated with [Claude Code](https://claude.com/claude-code)"
+  - "Co-Authored-By: Claude <noreply@anthropic.com>"
+  - Any other attribution to Claude or AI assistance
+  - Use `git commit --amend` to edit the last commit message if needed before pushing
 
 ## Testing
 
