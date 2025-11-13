@@ -226,3 +226,15 @@ If you cannot complete the checklist, STOP and ask Taariq for help gathering inf
 - Before pushing to any remote, YOU MUST verify it's not accidentally pushing to a public repo when the code contains sensitive business logic or data
 - YOU MUST alert Taariq if you detect configuration that might expose sensitive services publicly
 
+## Documentation
+
+### README Files and License Consistency
+- Before creating or updating any README file, YOU MUST check the existing LICENSE file in the repository
+- YOU MUST ensure the license mentioned in README matches the actual LICENSE file
+- Common license files to check:
+  - `LICENSE` or `LICENSE.md` or `LICENSE.txt`
+  - Check the first few lines to identify the license type (MIT, Apache 2.0, GPL, etc.)
+- If there is a mismatch between README and LICENSE file, YOU MUST STOP and alert Taariq
+- NEVER assume the license type - always verify by reading the actual LICENSE file
+- If no LICENSE file exists and you're creating a README, YOU MUST ask Taariq which license to use
+
